@@ -1,14 +1,16 @@
 # mern_app
 
 - It is a basic application with React, Node, Express, and MongoDB
-- React Frontend Application
 
+### React Frontend Application
 - cd client
 - npm install
 - npm run dev
 
-- Node Backend Application
-
+### Node Backend Application
 - cd server
 - npm install
 - npm start
+
+### MongoDB
+- Add MongoDB URL to the env

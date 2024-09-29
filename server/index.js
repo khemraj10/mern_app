@@ -4,20 +4,23 @@ const path = require("path");
 const routes = require("./routes");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const dotenv = require("dotenv");
+dotenv.config();
 
 const app = express();
 const port = 3000;
 
 const publicURLPath = process.env.PUBLIC_URL_PATH || "/mern";
-uri = "mongodb://localhost:27017/users";
-mongoose.connect(uri);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(cors({
-  credentials: true
-}));
+app.use(
+  cors({
+    credentials: true,
+    methods: "GET, PUT, POST, DELETE",
+  })
+);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
@@ -40,6 +43,17 @@ app.use((err, req, res, next) => {
     .status(400)
     .json({ message: "Error in processing Request", description: err.message });
 });
+
+const uri= process.env.uri || 'mongodb://localhost:27017/users'
+
+mongoose
+  .connect(uri)
+  .then(() => {
+    console.log("mongoose connected");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 
 app.listen(port, () => {
   console.log(`Listening at port on ${port}`);

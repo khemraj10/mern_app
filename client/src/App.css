@@ -1,20 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font-family: 'Times New Roman', Times, serif;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
 }
 
 .App {
   width: 100%;
   height: 100%;
+  display: flex;
 }
 
 .x-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.x-flex-row {
   display: flex;
   flex-direction: row;
 }
 
 .container {
+  flex: 1;
+}
+
+.all-container {
+  flex: 1;
+  background: linear-gradient(to right, #90a4ed, #f29bee);
+}
+
+.login-header {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.form-container {
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.form-inner-container {
+  background-color: #ffffff;
+  width: 25rem;
+  margin: 5rem;
+}
+
+.form-inner-container h2 {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.form {
+  justify-content: center;
+  align-items: center;
+}
+
+.form-input label, .form-input input {
+  margin: 0.3rem 2rem;
+}
+
+.form-inner-container p, .form-inner-container button {
+  text-align: center;
+} 
+
+.form-inner-container button {
+  background-color: #1980C9;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.logout-button {
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  justify-content: flex-end;
+}
+
+.heading {
+  display: flex;
+  color: #ffffff;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
   flex: 1;
 }
